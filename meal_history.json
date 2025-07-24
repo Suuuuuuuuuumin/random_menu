@@ -1,0 +1,5 @@
+[
+  {"meal": "Breakfast", "protein": 20, "carbs": 50, "fat": 10},
+  {"meal": "Lunch", "protein": 25, "carbs": 60, "fat": 20},
+  {"meal": "Dinner", "protein": 15, "carbs": 40, "fat": 30}
+]
