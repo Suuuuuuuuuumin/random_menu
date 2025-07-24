@@ -1,14 +1,14 @@
-# 메뉴 추천 프로젝트
+# 메뉴 추천 웹 서비스
 
-이 프로젝트는 최근 3번의 식사에서 섭취한 영양소 정보를 바탕으로 다음 식사로 추천할 메뉴를 제안합니다.
+최근 3끼 식사와 개인 정보를 입력하면 부족한 영양소를 채워 줄 다음 메뉴를 추천하는 간단한 웹 서비스입니다. 라이트/다크 모드를 지원하고 TailwindCSS를 이용해 반응형으로 동작합니다.
 
 ## 사용 방법
-1. `meal_history.json` 파일에 최근 3번의 식사 정보를 입력합니다.
-2. `menus.json` 파일에는 추천 가능한 메뉴의 영양 정보를 기록합니다.
-3. `python3 recommend_menu.py` 명령을 실행하면 가장 적절한 메뉴가 출력됩니다.
+1. `menus.json` 파일에 음식 데이터를 추가합니다.
+2. `python3 web_service.py` 를 실행하고 브라우저에서 `http://localhost:8000` 에 접속합니다.
+3. 성별, 연령, 알레르기 정보와 최근 식사 3가지를 입력하면 추천 결과가 표시됩니다.
 
 ### 예시
-```
-$ python3 recommend_menu.py
-Recommended menu: Chicken Salad
+```bash
+$ python3 web_service.py
+Serving on http://localhost:8000
 ```

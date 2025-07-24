@@ -13,11 +13,21 @@ def load_json(path):
         return json.load(f)
 
 
-def total_macros(meals):
+def find_menu(name, menus):
+    for m in menus:
+        if m["name"] == name:
+            return m
+    return None
+
+
+def total_macros(meals, menus):
     totals = {"protein": 0, "carbs": 0, "fat": 0}
-    for meal in meals:
+    for name in meals:
+        menu = find_menu(name, menus)
+        if not menu:
+            continue
         for k in totals:
-            totals[k] += meal.get(k, 0)
+            totals[k] += menu.get(k, 0)
     return totals
 
 
@@ -37,7 +47,7 @@ def recommend(meal_history_path: str, menus_path: str):
     meals = load_json(meal_history_path)
     menus = load_json(menus_path)
 
-    consumed = total_macros(meals)
+    consumed = total_macros(meals, menus)
 
     best_menu = None
     best_score = float("inf")
